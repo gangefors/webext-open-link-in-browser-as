@@ -8,6 +8,7 @@ const debug = isDebug ? console.log.bind(window.console) : () => {};
 
 const MENU_IDS = {
   text: "open-as-text",
+  json: "open-as-json",
   html: "open-as-html",
   xml: "open-as-xml",
   image: "open-as-image",
@@ -17,6 +18,7 @@ const MENU_IDS = {
 
 const MIMES_HTTP = {};
 MIMES_HTTP[MENU_IDS.text] = "text/plain;charset=UTF-8";
+MIMES_HTTP[MENU_IDS.json] = "application/json";
 MIMES_HTTP[MENU_IDS.html] = "text/html";
 MIMES_HTTP[MENU_IDS.xml] = "text/xml";
 // Note:
@@ -104,6 +106,7 @@ function openAs(data) {
 
 browser.contextMenus.create({contexts: ["link"], id: MENU_IDS.server_type, title: "Server repored type"});
 browser.contextMenus.create({contexts: ["link"], id: MENU_IDS.text, title: "Text"});
+browser.contextMenus.create({contexts: ["link"], id: MENU_IDS.json, title: "JSON"});
 browser.contextMenus.create({contexts: ["link"], id: MENU_IDS.image, title: "Image"});
 browser.contextMenus.create({contexts: ["link"], id: MENU_IDS.pdf, title: "PDF"});
 browser.contextMenus.create({contexts: ["link"], id: MENU_IDS.xml, title: "XML"});
